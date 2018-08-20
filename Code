@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+	int i=0,x=0,total=0;
+string Word[50] = {""}; // this is an array for WordBank (here you can change the capacity of wordbank by changing 50)
+	string Search_Word = "";    // string for SearchWord
+	
+	cout << "Enter the words for storage:" <<endl;    	
+
+	while(x==0){	   //this loop will fill up the wordbank 
+		cin >> Word[i]; 
+		if(Word[i]=="*end*"){ x=1; }
+        i++;
+	}
+	cout <<"Enter the word you want to find: ";
+	cin >> Search_Word;	
+
+    // this is the Iteration 	
+	for(int y=0;  y < i-1 ;y++){
+		if(Search_Word==Word[y]){ total++; } //if the user input words matches
+	}
+	
+	cout << "The number of occurrances of the word" << " " << Search_Word << " " << "is "<< total << " "<<" times in the Word Bank."<<endl;		
+
+	return 0; 
+}
